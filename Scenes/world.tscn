@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://c5atcqkdxafko"]
 
-[ext_resource type="PackedScene" uid="uid://co2nl22jiyiug" path="res://Scenes/player.tscn" id="1_o8gsr"]
-[ext_resource type="Script" path="res://Scripts/player.gd" id="2_5okvs"]
+[ext_resource type="PackedScene" uid="uid://co2nl22jiyiug" path="res://Scenes/player.tscn" id="1_ij2sg"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="2_rjkxx"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_qwl3i"]
 
@@ -18,9 +18,9 @@ size = Vector2(408, 22)
 
 [node name="World" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_o8gsr")]
+[node name="Player" parent="." instance=ExtResource("1_ij2sg")]
 position = Vector2(125, 79)
-script = ExtResource("2_5okvs")
+script = ExtResource("2_rjkxx")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
