@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5atcqkdxafko"]
+[gd_scene load_steps=9 format=3 uid="uid://c5atcqkdxafko"]
 
 [ext_resource type="PackedScene" uid="uid://co2nl22jiyiug" path="res://Scenes/player.tscn" id="1_ij2sg"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="2_rjkxx"]
@@ -15,6 +15,8 @@ diffuse_texture = SubResource("GradientTexture2D_fbtnu")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2h067"]
 size = Vector2(408, 22)
+
+[sub_resource type="TileSet" id="TileSet_watrx"]
 
 [node name="World" type="Node2D"]
 
@@ -33,3 +35,7 @@ texture = SubResource("CanvasTexture_wp5g8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(44, 144)
 shape = SubResource("RectangleShape2D_2h067")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_watrx")
+format = 2
