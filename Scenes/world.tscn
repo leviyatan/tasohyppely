@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://c5atcqkdxafko"]
+[gd_scene load_steps=13 format=3 uid="uid://c5atcqkdxafko"]
 
 [ext_resource type="PackedScene" uid="uid://co2nl22jiyiug" path="res://Scenes/player.tscn" id="1_ij2sg"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="2_rjkxx"]
 [ext_resource type="Texture2D" uid="uid://cofypdxiegeni" path="res://Assets/main_lev_buildA.png" id="3_sq3ug"]
+[ext_resource type="PackedScene" uid="uid://bajecbr13036q" path="res://Scenes/hostile_1.tscn" id="4_7ik5c"]
 [ext_resource type="Texture2D" uid="uid://bnlstk8x8p8iv" path="res://Assets/background1.png" id="4_wjy73"]
 [ext_resource type="Texture2D" uid="uid://bebmwy1y52yj8" path="res://Assets/background2.png" id="5_v3lay"]
 [ext_resource type="Texture2D" uid="uid://bqp8yi6i62j1n" path="res://Assets/background3.png" id="6_nglqb"]
@@ -1930,6 +1931,9 @@ layer_1/tile_data = PackedInt32Array(458752, 917504, 17, 524288, 917504, 18, 458
 [node name="Player" parent="TileMap" instance=ExtResource("1_ij2sg")]
 position = Vector2(5, 109)
 script = ExtResource("2_rjkxx")
+
+[node name="hostile1" parent="TileMap" instance=ExtResource("4_7ik5c")]
+position = Vector2(-557, -69)
 
 [node name="level_end_placeholder" type="MeshInstance2D" parent="."]
 position = Vector2(1165, -45)
