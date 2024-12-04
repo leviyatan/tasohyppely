@@ -8,7 +8,6 @@ const JUMP_VELOCITY = -300.0
 var double_jump = 1
 var last_direction = 1
 
-
 func shoot(bullet_direction):
 	var bullet = bulletPath.instantiate()
 	

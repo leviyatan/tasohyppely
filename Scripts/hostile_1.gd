@@ -3,7 +3,7 @@ extends CharacterBody2D
 class_name FrogEnemy
 
 const speed = 10
-var is_frog_chase: bool
+var is_frog_chase: bool = false
 
 var health = 80
 var health_max = 80
@@ -24,6 +24,7 @@ func _process(delta):
 		velocity.y += gravity * delta
 		velocity.x = 0
 	move(delta)
+	handle_animation()
 	move_and_slide()
 
 func move(delta):
@@ -33,6 +34,23 @@ func move(delta):
 		is_roaming = true
 	elif dead:
 		velocity.x = 0
+
+func handle_animation():
+	var anim_sprite = $AnimatedSprite2D
+	if !dead and !taking_damage and !is_dealing_damage:
+		anim_sprite.play("walk")
+	elif !dead and taking_damage and !is_dealing_damage:
+		anim_sprite.play("hurt")
+		await get_tree().create_timer(0.8).timeout
+		taking_damage = false
+	elif dead and is_roaming:
+		is_roaming = false
+		anim_sprite.play("death")
+		await get_tree().create_timer(1.0).timeout
+		handle_death()
+
+func handle_death():
+	self.queue_free()
 
 func _on_direction_timer_timeout() -> void:
 	$DirectionTimer.wait_time = choose([1.5,2.0,2.5])
