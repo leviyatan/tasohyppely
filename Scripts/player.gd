@@ -8,6 +8,7 @@ const JUMP_VELOCITY = -300.0
 var double_jump = 1
 var last_direction = 1
 
+
 func shoot(bullet_direction):
 	var bullet = bulletPath.instantiate()
 	
@@ -27,7 +28,9 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and double_jump > 0:
 		velocity.y = JUMP_VELOCITY
-		if not is_on_floor():
+		if not Globals.double_jump_unlocked:
+			double_jump = 0
+		elif not is_on_floor():
 			double_jump = double_jump - 1
 
 	# Get the input direction and handle the movement/deceleration.

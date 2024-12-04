@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c5atcqkdxafko"]
+[gd_scene load_steps=12 format=3 uid="uid://c5atcqkdxafko"]
 
 [ext_resource type="PackedScene" uid="uid://co2nl22jiyiug" path="res://Scenes/player.tscn" id="1_ij2sg"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="2_rjkxx"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bebmwy1y52yj8" path="res://Assets/background2.png" id="5_v3lay"]
 [ext_resource type="Texture2D" uid="uid://bqp8yi6i62j1n" path="res://Assets/background3.png" id="6_nglqb"]
 [ext_resource type="Texture2D" uid="uid://bklenlaujb5xt" path="res://Assets/background4b.png" id="7_t3lpx"]
+[ext_resource type="PackedScene" uid="uid://y12i3r4v3nfr" path="res://Scenes/pickup_ability.tscn" id="9_v4kxk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4g07d"]
 texture = ExtResource("3_sq3ug")
@@ -1913,10 +1914,6 @@ texture = ExtResource("3_sq3ug")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_4g07d")
 
-[sub_resource type="QuadMesh" id="QuadMesh_21c58"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_18382"]
-
 [node name="World" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1933,13 +1930,7 @@ position = Vector2(5, 109)
 script = ExtResource("2_rjkxx")
 
 [node name="hostile1" parent="TileMap" instance=ExtResource("4_7ik5c")]
-position = Vector2(-557, -69)
-
-[node name="level_end_placeholder" type="MeshInstance2D" parent="."]
-position = Vector2(1165, -45)
-scale = Vector2(32.3125, 39.5625)
-mesh = SubResource("QuadMesh_21c58")
-texture = SubResource("PlaceholderTexture2D_18382")
+position = Vector2(1977, 33)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -1974,3 +1965,6 @@ motion_mirroring = Vector2(960, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
 position = Vector2(3, 55)
 texture = ExtResource("7_t3lpx")
+
+[node name="pickup_ability" parent="." instance=ExtResource("9_v4kxk")]
+position = Vector2(-576, -42)
