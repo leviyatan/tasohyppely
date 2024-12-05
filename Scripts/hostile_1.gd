@@ -5,7 +5,7 @@ class_name FrogEnemy
 const speed = 10
 var is_frog_chase: bool = false
 
-var health = 80
+var health = 5
 var health_max = 80
 var health_min = 0
 
@@ -26,6 +26,8 @@ func _process(delta):
 	move(delta)
 	handle_animation()
 	move_and_slide()
+	if health <= 0:
+		dead = true
 
 func move(delta):
 	if !dead:
@@ -61,3 +63,7 @@ func _on_direction_timer_timeout() -> void:
 func choose(array):
 	array.shuffle()
 	return array.front()
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	health-=1

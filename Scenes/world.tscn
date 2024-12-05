@@ -1930,7 +1930,7 @@ position = Vector2(5, 109)
 script = ExtResource("2_rjkxx")
 
 [node name="hostile1" parent="TileMap" instance=ExtResource("4_7ik5c")]
-position = Vector2(1977, 33)
+position = Vector2(2107, 27)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
